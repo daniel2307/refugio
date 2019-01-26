@@ -10,18 +10,22 @@
             <td>Edad</td>
             <td>Fecha  de rescate</td>
             <td>Adoptante</td>
+            <td>Acciones</td>
         </tr>
     </thead>
     <tbody>
         {% if mascotas %}
             {% for mascota in mascotas %}
                 <tr>
-                    <td>{% mascota.id %}</td>
-                    <td>{% mascota.nombre %}</td>
-                    <td>{% mascota.sexo %}</td>
-                    <td>{% mascota.edad %}</td>
-                    <td>{% mascota.fecha_rescate %}</td>
-                    <td>{% mascota.persona.nombre %} {% mascota.persona.apellidos %}</td>
+                    <td>{{ mascota.id }}</td>
+                    <td>{{ mascota.nombre }}</td>
+                    <td>{{ mascota.sexo }}</td>
+                    <td>{{ mascota.edad }}</td>
+                    <td>{{ mascota.fecha_rescate }}</td>
+                    <td>{{ mascota.persona.nombre }} {{ mascota.persona.apellidos }}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{% url 'mascota_editar' mascota.id %}">Editar</a>
+                    </td>
                 </tr>
             {% endfor %}
         {% else %}
