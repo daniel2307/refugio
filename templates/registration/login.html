@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+Mascotas
+{% endblock %}
+
+{% block navbar %}
+
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" name="username" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label for="password">Contrasenia:</label>
+                <input type="text" name="password" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <a href="#">Olvide mi contrasenia</a>
+                <input type="submit" value="Ingresar" class="btn btn-primary">
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
